@@ -1,8 +1,10 @@
 var platform = Ti.Platform.osname;
-
+/*var controller = new GetOnBoardController();*/
 //A window object which will be associated with the stack of windows
 exports.BoardWindow = function(user) {
 	var ItemsWindow = require('ui/ItemsWindow').ItemsWindow;
+	var AddBoardWindow = require('ui/AddBoardWindow').AddBoardWindow;
+
 	var self = Ti.UI.createWindow({
 		title: 'Boards',
 		backgroundColor: '#fff',
@@ -14,7 +16,8 @@ exports.BoardWindow = function(user) {
 				    var menuItem = menu.add({ title: "Add Board" });
 				    menuItem.setIcon("images/ic_menu_add.png");
 				    menuItem.addEventListener("click", function(e) {
-				    	
+				    	var addWindow = new AddBoardWindow(user);
+				    	addWindow.open();
 				    });
 			}
 		}
@@ -42,6 +45,7 @@ exports.BoardWindow = function(user) {
 		top: 100,
 		left: 0
 	});
+	//controller.GetBoards({userId:16154913526645073}, setBoards, showError);
 	tableview.setData(getBoards(user));
 	tableview.addEventListener('click', function(e) {
 		var items = new ItemsWindow(e.row.id, e.row.title);
@@ -77,3 +81,27 @@ var getBoards = function(board) {
 	}
 	return data;
 };
+
+var setBoards = function(boards) {
+	var data = [];
+	var row = null;
+	for (var i = 0; i < boards.length; i++) {
+		row = Ti.UI.createTableViewRow({
+			id: boards[i].Id,
+			title: boards[i].N,
+			color: '#000',
+			backgroundColor: '#ccd5ef',
+			height: 60,
+			font: {
+				fontWeight: 'bold',
+				fontSize:20
+			}
+		});
+		data.push(row);
+	}
+	tableview.setData(data);
+};
+
+var showError = function(message){
+	
+}

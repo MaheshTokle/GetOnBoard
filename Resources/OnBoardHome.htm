@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/appacitiveSDK.min.js" type="text/javascript"></script>    
+    <script src="js/v1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var isSessionCreated = false;
+        Appacitive.session.environment = 'live';
+        Appacitive.session.create({
+            apikey: 'bGwqYOoP8aBFfoo3cOktIMhiVWzPDHano/W105sH9dI=',
+            app: 'GetOnBoard'
+        });
+        Appacitive.eventManager.subscribe('session.success', function () {
+            isSessionCreated = true;
+        });
+        $(document).ready(function () {
+
+            var controller = new GetOnBoardController();
+            $('#btnAuth').click(function () {
+                if (isSessionCreated) {
+                    var user = { username: $('#username').val(), password: $('#password').val() };
+                    controller.AuthenticateUser(user, function (result) {
+                        var boardSearchRq = { userId: controller.User.__id };
+
+                        controller.GetBoards(boardSearchRq);
+                        if (controller.User) {
+                            $('#lblUserId').val(controller.User.__id);
+                            $('#lblMsg').val("userAuthenticated");
+                        }
+                        var createBoardRq = {
+                            userId: controller.User.__id,
+                            board: {
+                                Name: "TODO List 30 jan",
+                                Description: "My todo list 1",
+                                __attributes: { "Statuses": "[TODO,Doing,Done]" }
+                            }
+                        };
+                        controller.CreateBoard(createBoardRq, function () {
+
+                        });
+                    });
+                    //                    var boardId = "16246449900749112";
+                    //                    var statuses = ["TODO", "Doing", "Done"];
+                    //                    if (controller.Boards !== null && controller.Boards.length > 0) {
+                    //                        boardId = controller.Boards[0].__id;
+                    //                        statuses = controller.Boards[0].__attributes.Statuses;
+                    //                    }
+                    //                    var createItemRq1 = {
+                    //                        boardId: boardId,
+                    //                        item: {
+                    //                            Title: "download Setups",
+                    //                            Description: "android setup",
+                    //                            Priority: 2,
+                    //                            Status: statuses[0]
+                    //                        }
+                    //                    };
+                    //                    controller.CreateItem(createItemRq1);
+                    //                    var createItemRq2 = {
+                    //                        boardId: boardId,
+                    //                        item: {
+                    //                            Title: "item no 2",
+                    //                            Description: "description 2",
+                    //                            Priority: 2,
+                    //                            Status: statuses[1]
+                    //                        }
+                    //                    };
+                    //                    controller.CreateItem(createItemRq2);
+                    //                    var createItemRq3 = {
+                    //                        boardId: boardId,
+                    //                        item: {
+                    //                            Title: "item no 3",
+                    //                            Description: "description 3",
+                    //                            Priority: 2,
+                    //                            Status: statuses[1]
+                    //                        }
+                    //                    };
+                    //                    controller.CreateItem(createItemRq3);
+                    //                    var createItemRq4 = {
+                    //                        boardId: boardId,
+                    //                        item: {
+                    //                            Title: "item no 5",
+                    //                            Description: "description 5",
+                    //                            Priority: 2,
+                    //                            Status: statuses[2]
+                    //                        }
+                    //                    };
+                    //                    controller.CreateItem(createItemRq4);
+
+
+                }
+            });
+            $('#btnGetItems').click(function () {
+                var getitemRq = {
+                    boardId: $('#txtBoardId').val()
+                };
+                controller.GetItems(getitemRq, function (items) {
+                    if (items && items.length > 0) {
+                        var item = items[0];
+                        $('#txtItemId').val(item.__id);
+                        $('#txtTitle').val(item.title);
+                        $('#txtDesc').val(item.description);
+                        $('#txtPriority').val(item.priority);
+                        $('#txtStatus').val(item.status);
+                    }
+
+                });
+            });
+            $('#btnUpdateItem').click(function () {
+                var updateItemRq = {
+                    item: {
+                        __id: $('#txtItemId').val(),
+                        title: $('#txtTitle').val(),
+                        description: $('#txtDesc').val(),
+                        priority: $('#txtPriority').val(),
+                        status: $('#txtStatus').val()
+                    }
+                };
+                controller.UpdateItem(updateItemRq, null, null);
+            });
+            $('#btnCreateUser').click(function () {
+                var createUserRq = {
+                    user: {
+                        username: $('#txtUN').val(),
+                        password: $('#txtPwd').val(),
+                        firstname: $('#txtFN').val(),
+                        lastname: $('#txtLN').val(),
+                        email : ''
+                    }
+
+                };
+                controller.CreateUser(createUserRq);
+            });
+
+        });
+        
+
+    </script>
+</head>
+<body>
+    <div id="user">
+        <label>
+            Username</label>
+        <input type="text" id="username" />
+        <br />
+        <label>
+            password</label>
+        <input type="text" id="password" />
+        <input id="btnAuth" type="submit" value="Authenticate" />
+    </div>
+    
+    <div id="dvCreateUser">
+        <label>Create User</label>
+        <br/>
+        <label>
+            Username</label>
+        <input type="text" id="txtUN" />
+        <br />
+        <label>Password</label>
+        <input type="text" id="txtPwd" />
+        <br/>
+          <label>First Name</label>
+        <input type="text" id="txtFN" />
+        <br/>
+        <label>Last Name</label>
+        <input type="text" id="txtLN" />
+        <br/>
+        <input id="btnCreateUser" type="submit" value="Authenticate" />
+    </div>
+
+    <br />
+    <div id="result">
+        <label id="lblMsg">
+            Nothing yet</label>
+        <label id="lblUserId">
+        </label>
+        
+    </div>
+    <br />
+    <label>
+        Board Id</label><input type="text" id="txtBoardId" />
+        <input type="button" value="GetItems" id="btnGetItems"/>
+    <div id="itemDetails">
+        <table>
+            <td>
+                <tr>
+                    Id</tr>
+                <tr>
+                    <input type="text" id="txtItemId" /></tr>
+            </td>
+            <td>
+                <tr>
+                    Title</tr>
+                <tr>
+                    <input type="text" id="txtTitle" /></tr>
+            </td>
+            <td>
+                <tr>
+                    Description</tr>
+                <tr>
+                    <input type="text" id="txtDesc" /></tr>
+            </td>
+            <td>
+                <tr>
+                    Priority</tr>
+                <tr>
+                    <input type="text" id="txtPriority" /></tr>
+            </td>
+            <td>
+                <tr>
+                    Status</tr>
+                <tr>
+                    <input type="text" id="txtStatus" /></tr>
+            </td>
+        </table>
+        <input type="button" value="Update" id="btnUpdateItem"/>
+    </div>
+</body>
+</html>

@@ -1,20 +1,23 @@
 var platform = Ti.Platform.osname;
 
 //A window object which will be associated with the stack of windows
-exports.ItemsWindow = function(user) {
+exports.ItemsWindow = function(user,board) {
+	var CreateItemsWindow = require('ui/CreateItem').CreateItemWindow;
 	var self = Ti.UI.createWindow({
 		title: 'Items',
 		backgroundColor: '#fff',
 		navBarHidden: true,
 		userId: user,
+		board: board,
 		activity: {
 			onCreateOptionsMenu: function(e) {
 					var menu = e.menu;
 				    var menuItem = menu.add({ title: "Add Item" });
 				    menuItem.setIcon("images/ic_menu_add.png");
 				    menuItem.addEventListener("click", function(e) {
-				    	
-				    });
+				    	var itemsWin = new CreateItemsWindow(board.boardId);
+				    	itemsWin.open();
+			    	});
 			}
 		}
 	});
