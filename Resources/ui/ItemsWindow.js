@@ -39,67 +39,41 @@ exports.ItemsWindow = function(user) {
 	
 	// TO DO view
 	var tblTodoView = Ti.UI.createTableView({
-		top: 102,
-		left: 10,
-		width: '90%',
-		xmax : 270,
-	    xmin : 20,
-	    buttonleftmargin : 5,
-	    startposition : null,
-	    offset : null
+		width: '90%'
 	});
 	tblTodoView.setData(getToDos(user));
 	tblTodoView.addEventListener('click', function(e) {
 		
 	});
 	
-	self.add(tblTodoView);
-	
 	// Doing view
 	var tblDoingView = Ti.UI.createTableView({
-		top: 102,
-		left: '95%',
 		width: '90%'
 	});
 	tblDoingView.setData(getDoings(user));
 	tblDoingView.addEventListener('click', function(e) {
 		
 	});
-	self.add(tblDoingView);
 	
 	//Done view
 	var tblDoneView = Ti.UI.createTableView({
-		top: 102,
-		left: '150%',
 		width: '90%'
 	});
 	tblDoneView.setData(getDoneItems(user));
 	tblDoneView.addEventListener('click', function(e) {
 		
 	});
-	self.add(tblDoneView);
-	
-	var xmax = 270;
-	var xmin = 20;
-	var xlast = 400;
-	tblTodoView.addEventListener('touchmove', function(e) {
-	    var xpos = e.globalPoint.x - e.x - buttonmargin;
-	    var direction = (xlast > xpos) ? 'left' : 'right';
-	    Ti.API.log(xpos + '   ' + xlast + '   ' + direction);
-	    if(xpos > xmin && direction == 'left' || xpos > xmax) {
-	        contentWindow.animate(Ti.UI.createAnimation({
-	            duration : 100,
-	            left : xpos - 5
-	        }));
-	    }
-	    if(xpos > 0 && xpos <= xmax && direction == 'right') {
-	        contentWindow.animate(Ti.UI.createAnimation({
-	            duration : 100,
-	            left : xpos + 5
-	        }));
-	    }
-	    xlast = xpos;
+		
+	var scrollView = Titanium.UI.createScrollableView({
+		views:[tblTodoView,tblDoingView,tblDoneView],
+		showPagingControl:true,
+		pagingControlHeight:30,
+		maxZoomScale:2.0,
+		currentPage:0,
+		top: 102,
+		clipViews: false
 	});
+	self.add(scrollView);
 	return self;
 };
 
@@ -154,4 +128,5 @@ var getItemRow = function(item,color) {
 		}
 	});
 };
+
 
