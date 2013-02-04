@@ -5,65 +5,22 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.041000 seconds on emulator to get ready
+[DEBUG] waited 0.038000 seconds on emulator to get ready
 [DEBUG] com.getonboard.appacitive.com installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[INFO] Detected change in tiapp.xml, or assets deleted. Forcing full re-build...
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\android\appicon.png => D:\Code\GetOnBoard\build\android\bin\assets\Resources\appicon.png
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\android\default.png => D:\Code\GetOnBoard\build\android\bin\assets\Resources\default.png
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\app.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\app.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\appacitiveSDK.min.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\appacitiveSDK.min.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\KS_nav_ui.png => D:\Code\GetOnBoard\build\android\bin\assets\Resources\KS_nav_ui.png
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\KS_nav_views.png => D:\Code\GetOnBoard\build\android\bin\assets\Resources\KS_nav_views.png
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\BoardWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\BoardWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\common\DetailView.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\common\DetailView.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\common\MasterView.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\common\MasterView.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\DoingWin.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\DoingWin.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\DoneWin.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\DoneWin.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\handheld\android\ApplicationWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\handheld\android\ApplicationWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\handheld\ios\ApplicationWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\handheld\ios\ApplicationWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\handheld\mobileweb\ApplicationWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\handheld\mobileweb\ApplicationWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\ItemsWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\ItemsWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\ListWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\ListWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\tablet\ApplicationWindow.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\tablet\ApplicationWindow.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\ui\ToDoWin.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\ui\ToDoWin.js
-[TRACE] COPYING CREATED FILE: D:\Code\GetOnBoard\Resources\v1.js => D:\Code\GetOnBoard\build\android\bin\assets\Resources\v1.js
-[TRACE] Generating Java Classes
+[INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
-[DEBUG] app stylesheet => D:\Code\GetOnBoard\build\android\gen\com\getonboard\appacitive\com\ApplicationStylesheet.java
-[DEBUG] copying app icon: D:\Code\GetOnBoard\build\android\bin\assets\Resources\appicon.png
-[DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-long-land-hdpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-long-land-hdpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-long-land-hdpi\background.png
 [DEBUG] found drawable-long-land-ldpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-long-land-ldpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-long-land-ldpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-long-land-ldpi\background.png
 [DEBUG] found drawable-long-port-hdpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-long-port-hdpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-long-port-hdpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-long-port-hdpi\background.png
 [DEBUG] found drawable-long-port-ldpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-long-port-ldpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-long-port-ldpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-long-port-ldpi\background.png
 [DEBUG] found drawable-notlong-land-hdpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-notlong-land-hdpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-notlong-land-hdpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-notlong-land-hdpi\background.png
 [DEBUG] found drawable-notlong-land-ldpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-notlong-land-ldpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-notlong-land-ldpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-notlong-land-ldpi\background.png
 [DEBUG] found drawable-notlong-land-mdpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-notlong-land-mdpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-notlong-land-mdpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-notlong-land-mdpi\background.png
 [DEBUG] found drawable-notlong-port-hdpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-notlong-port-hdpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-notlong-port-hdpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-notlong-port-hdpi\background.png
 [DEBUG] found drawable-notlong-port-ldpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-notlong-port-ldpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-notlong-port-ldpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-notlong-port-ldpi\background.png
 [DEBUG] found drawable-notlong-port-mdpi splash screen at D:\Code\GetOnBoard\Resources\android\images\res-notlong-port-mdpi\default.png
-[DEBUG] copying D:\Code\GetOnBoard\Resources\android\images\res-notlong-port-mdpi\default.png splash screen to D:\Code\GetOnBoard\build\android\res\drawable-notlong-port-mdpi\background.png
-[DEBUG] found splash screen at D:\Code\GetOnBoard\build\android\bin\assets\Resources\default.png
-[TRACE] Writing out AndroidManifest.xml
-[DEBUG] adding D:\Code\GetOnBoard\build\android\gen\com\getonboard\appacitive\com\ApplicationStylesheet.java to javac build list
-[DEBUG] adding D:\Code\GetOnBoard\build\android\gen\com\getonboard\appacitive\com\GetonboardActivity.java to javac build list
-[DEBUG] adding D:\Code\GetOnBoard\build\android\gen\com\getonboard\appacitive\com\GetonboardAppInfo.java to javac build list
-[DEBUG] adding D:\Code\GetOnBoard\build\android\gen\com\getonboard\appacitive\com\GetonboardApplication.java to javac build list
-[DEBUG] adding D:\Code\GetOnBoard\build\android\gen\com\getonboard\appacitive\com\R.java to javac build list
-[DEBUG] Building Java Sources: "D:\\Code\\GetOnBoard\\build\\android\\gen\\com\\getonboard\\appacitive\\com\\ApplicationStylesheet.java" "D:\\Code\\GetOnBoard\\build\\android\\gen\\com\\getonboard\\appacitive\\com\\GetonboardActivity.java" "D:\\Code\\GetOnBoard\\build\\android\\gen\\com\\getonboard\\appacitive\\com\\GetonboardAppInfo.java" "D:\\Code\\GetOnBoard\\build\\android\\gen\\com\\getonboard\\appacitive\\com\\GetonboardApplication.java" "D:\\Code\\GetOnBoard\\build\\android\\gen\\com\\getonboard\\appacitive\\com\\R.java"
-[INFO] Compiling Android Resources... This could take some time
-[DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: D:\Code\GetOnBoard\build\android\bin\app-unsigned.apk
 [DEBUG] from resource zip => assets/Resources/ui/common/DetailView.js
 [DEBUG] from resource zip => assets/Resources/ui/common/MasterView.js
@@ -72,11 +29,8 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/ui/handheld/mobileweb/ApplicationWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/tablet/ApplicationWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/BoardWindow.js
-[DEBUG] from resource zip => assets/Resources/ui/DoingWin.js
-[DEBUG] from resource zip => assets/Resources/ui/DoneWin.js
 [DEBUG] from resource zip => assets/Resources/ui/ItemsWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/ListWindow.js
-[DEBUG] from resource zip => assets/Resources/ui/ToDoWin.js
 [DEBUG] from resource zip => assets/Resources/KS_nav_ui.png
 [DEBUG] from resource zip => assets/Resources/KS_nav_views.png
 [DEBUG] from resource zip => assets/Resources/app.js
@@ -130,6 +84,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.034000 seconds on emulator to get ready
+[DEBUG] waited 0.037000 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen
